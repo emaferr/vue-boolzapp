@@ -1,0 +1,97 @@
+/* UNIVERSALI */
+.avatar{
+    width: 60px;
+}
+
+/* BODY */
+.sfondo_principale{
+    height: 100vh;
+    background: linear-gradient(to top, #D2DBDC, #DDDBD1);
+    position: relative;
+}
+
+.banda{
+    background-color: #009688;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+}
+
+#app{
+    position: absolute;
+    top: 2.5vh;
+    left: 10%;
+    background-color: #EAEAEA;
+    height: 95vh;
+    width: 80%;
+}
+
+/* HEADER */
+.utente_contatti{
+    background-color: #EAEAEA;
+    height: calc(100px - 2.5vh);
+}
+
+.sezione_utente, .sezione_contatti{
+    height: calc(100px - 2.5vh);
+    display: flex;
+    align-items: center;
+}
+
+.sezione_utente{
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+
+.icone_top{
+    font-size: 1.5rem;
+    color: #B1B1B1;
+}
+
+/* MAIN */
+.avviso{
+    background-color: #8EDAFC;
+    display: flex;
+}
+
+.avviso > i{
+    font-size: 1.5rem;
+    color: #8EDAFC;
+    background-color: white;
+    padding: .8rem .6rem;
+}
+
+.ricerca, .avviso a{
+    font-size: .8rem;
+}
+
+.barra_ricerca{
+    display: flex;
+    position: relative;
+}
+
+.barra_ricerca i{
+    color: #BABBBB;
+    position: absolute;
+    top: 30%;
+    left: 5%;
+}
+
+.ricerca{
+    width: 100%;
+    border: none;
+
+}
+
+.lista_contatti{
+    background-color: white;
+    height: calc(100vh - 270px);
+    overflow: scroll;
+}
+
+
+
+
+
+
+

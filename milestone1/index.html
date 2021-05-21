@@ -28,11 +28,117 @@
 
       <body>
 
-        <header></header>
+        <!-- Sfondo Web app -->
+        <div class="sfondo_principale">
+          <div class="banda"></div>
+        </div>
 
-        <main></main>
+        <!-- VUE -->
+        <div id="app">
 
-        <footer></footer>
+          <!-- HEADER -->
+          <header>
+
+            <!-- SEZIONE UTENTE -->
+            <div class="utente_contatti">
+
+              <div class="row">
+
+                <div class="col-4 sezione_utente border-end">
+
+                  <div class="utente">
+                    <img src="./assets/img/avatar_8.jpg" class="img-fluid avatar rounded-circle" alt="...">
+                    <span class="mx-1">Emanuele Ferrauto</span>
+                  </div>
+                  
+                  <div class="icone_top">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt mx-3"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                  </div>
+
+                </div>
+
+                <!-- SEZIONE CONTATTO ATTIVO -->
+                <div class="col sezione_contatti justify-content-between">
+                  <div class="contatto_attivo">
+                    <img src="./assets/img/avatar_8.jpg" class="img-fluid avatar rounded-circle" alt="...">
+                    <span class="mx-1">Nome Utente</span>
+                  </div>
+                  
+                  <div class="icone_top pe-4">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip mx-3"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                  </div>
+                </div>
+
+              </div>
+              
+            </div>
+
+          </header>
+          <!-- FINE HEADER -->
+          
+          <!-- MAIN -->
+          <main>
+
+            <!-- SEZIONE LISTA CONTATTI -->
+            <div class="sezione_lista_contatti">
+
+              <div class="row">
+
+                <div class="col-4 pe-0">
+
+                  <!-- AVVISO -->
+                  <div class="avviso p-4">
+
+                    <i class="fas fa-bell-slash rounded-circle me-2"></i>
+                    
+                    <div class="d-inline">
+                      <span class="">Ricevi notifiche di nuovi messaggi</span>
+                      <a class="d-inline-block text-black-50" href="#">Attiva notifiche desktop</a>
+                    </div>
+                    
+                  </div>
+
+                  <!-- BARRA DI RICERCA -->
+                  <div class="barra_ricerca m-2">
+                    <i class="fas fa-search"></i>
+                    <input class="ricerca text-center rounded-1 p-2" type="text" name="search" placeholder="Cerca o inizia una nuova chat">
+                  </div>
+
+                  <!-- LISTA CONTATTI -->
+                  <section class="lista_contatti">
+                    <ul class="px-3">
+                      <li class="list-group flex-row mt-3 mb-4" v-for="(contatto, index) in contatti">
+                        <img :src="'./assets/img/avatar' + contatto.immagine + '.jpg'" class="img-fluid avatar rounded-circle me-3" alt="">
+                        <span>{{contatto.nome}}</span>
+                      </li>
+                    </ul>
+
+                  </section>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </main>
+          <!-- FINE MAIN -->
+
+          <footer></footer>
+
+        </div>
+
+        
+
+          
+
+        
+
+        
 
         <!-- Optional JavaScript; choose one of the two! -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
