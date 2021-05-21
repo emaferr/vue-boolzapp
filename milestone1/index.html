@@ -115,7 +115,7 @@
 
                     <ul class="px-3">
 
-                      <li class="list-group flex-row mt-3 mb-4" v-for="(contatto, index) in contatti" @click="selezioneContatto(index); selezionaImmagine(index)">
+                      <li class="list-group flex-row mt-3 mb-4" v-for="(contatto, index) in contatti" @click="selezioneContatto(index)">
                         <img :src="'./assets/img/avatar' + contatto.immagine + '.jpg'" class="img-fluid avatar rounded-circle me-3" alt="">
                         <span>{{contatto.nome}}</span>
                       </li>

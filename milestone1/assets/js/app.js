@@ -116,26 +116,25 @@ const app = new Vue ({
 
         selezioneContatto(index){
 
+            const immagine = this.contatti[index].immagine;
+
+            const prova = this.conversazione;
+
+            this.immagineAttiva = `./assets/img/avatar${immagine}.jpg`
+
             this.utenteAttivo = this.contatti[index];
 
             this.conversazione = this.contatti[index].messaggi;
 
-            console.log(this.conversazione);
-
-            console.log(this.conversazione.data);
-
-        },
-
-
-        selezionaImmagine(index){
-
             
 
-            const immagine = this.contatti[index].immagine;
+            console.log(prova);
 
-            this.immagineAttiva = `./assets/img/avatar${immagine}.jpg`
-                      
+         
+
         },
+
+
 
     }, 
 
