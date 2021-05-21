@@ -12,10 +12,13 @@
     cursor: pointer;
 }
 
-li > span, .avatar, .contatto_attivo span, .utente span{
+li , .avatar, .contatto_attivo span, .utente span{
     cursor: pointer;
 }
 
+.list-group-item:hover{
+    filter: brightness(95%);
+}
 
 /* BODY */
 .sfondo_principale{
@@ -175,7 +178,7 @@ input:focus {
 .indicatore{
     font-size: 2.5rem;
     position: absolute;
-    top: -1.55rem;
+    top: -1.42rem;
     left: -.6rem;
     color: white; 
     visibility: hidden;
@@ -185,7 +188,7 @@ input:focus {
     color: #D5F9BA;
     font-size: 2.5rem;
     position: absolute;
-    top: -1.55rem;
+    top: -1.42rem;
     right: -.6rem;
     visibility: hidden;
 }
