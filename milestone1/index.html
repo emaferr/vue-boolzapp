@@ -95,9 +95,9 @@
 
                     <i class="fas fa-bell-slash rounded-circle me-2"></i>
                     
-                    <div class="d-inline">
+                    <div class="d-inline text-nowrap overflow-auto">
                       <span class="">Ricevi notifiche di nuovi messaggi</span>
-                      <a class="d-inline-block text-black-50" href="#">Attiva notifiche desktop</a>
+                      <a class="d-block text-black-50" href="#">Attiva notifiche desktop</a>
                     </div>
                     
                   </div>
@@ -110,16 +110,39 @@
 
                   <!-- LISTA CONTATTI -->
                   <section class="lista_contatti">
+
                     <ul class="px-3">
-                      <li class="list-group flex-row mt-3 mb-4" v-for="(contatto, index) in contatti">
+
+                      <li class="list-group flex-row mt-3 mb-4" v-for="(contatto, index) in contatti" @click='selezionaChat'>
                         <img :src="'./assets/img/avatar' + contatto.immagine + '.jpg'" class="img-fluid avatar rounded-circle me-3" alt="">
                         <span>{{contatto.nome}}</span>
                       </li>
+
                     </ul>
 
                   </section>
 
                 </div>
+
+                <!-- SEZIONE CHAT -->
+                <div class="chat col">
+
+                  <div class="conversazione">
+
+                  
+                  </div>
+
+                  <!-- COMPONI MESSAGGIO -->
+                  <div class="componi py-3">
+
+                    <i class="far fa-smile icone_bottom mx-3"></i>
+                    <input style="width: 100%;" class="border-0 rounded-3 px-3 py-4" type="text" placeholder="Scrivi un messaggio">
+                    <i class="fas fa-microphone icone_bottom mx-3"></i>
+
+                  </div>
+                  
+                </div>
+                
 
               </div>
 
@@ -127,8 +150,6 @@
 
           </main>
           <!-- FINE MAIN -->
-
-          <footer></footer>
 
         </div>
 

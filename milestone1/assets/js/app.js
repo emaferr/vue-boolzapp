@@ -7,6 +7,8 @@
 
 const app = new Vue ({
 
+    contatore : 0,
+
     el:'#app',
 
     data:{
@@ -103,7 +105,18 @@ const app = new Vue ({
 
         ]
 
-    }
+    },
+
+    methods: {
+        
+        selezionaChat(contatore){
+            
+            console.log(contatore);
+
+            
+        }
+        
+    },
 
 })
 
