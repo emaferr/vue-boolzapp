@@ -64,7 +64,10 @@
 
                   <div class="contatto_attivo">
                     <img id="prova2" :src="immagineAttiva"  class="img-fluid avatar rounded-circle" :class="" alt="...">
-                    <span id="prova" class="mx-1">{{utenteAttivo.nome}}</span>
+                    <div class="dettagli_contatto_attivo mx-2">
+                      <span class="">{{utenteAttivo.nome}}</span>
+                      <span style="font-size: .8rem;" class="text-black-50">Ultimo accesso oggi alle {{getCurrentTime()}}</span>
+                    </div>
                   </div> 
                   
                   <div class="icone_top pe-4">
@@ -144,7 +147,7 @@
                   <div class="componi py-3">
 
                     <i class="far fa-smile icone_bottom mx-3"></i>
-                    <input style="width: 100%;" class="border-0 rounded-3 px-3 py-4" type="text" placeholder="Scrivi un messaggio">
+                    <input @keydown.enter="addMessaggio" id="nuovo_messaggio" v-model="nuovoMessaggio" style="width: 100%;" class="border-0 rounded-3 px-3 py-4" type="text" placeholder="Scrivi un messaggio">
                     <i class="fas fa-microphone icone_bottom mx-3"></i>
 
                   </div>
@@ -171,6 +174,7 @@
 
         <!-- Optional JavaScript; choose one of the two! -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"></script>
         <script src="./assets/js/app.js"></script>
 
         <!-- Option 1: Bootstrap Bundle with Popper -->

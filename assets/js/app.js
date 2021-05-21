@@ -109,9 +109,13 @@ const app = new Vue ({
 
         conversazione : '',
 
+        nuovoMessaggio : '',
+
     },
 
     methods: {
+
+        
 
 
         selezioneContatto(index){
@@ -124,14 +128,35 @@ const app = new Vue ({
 
             this.conversazione = this.contatti[index].messaggi;
 
-
-         
-
         },
 
+        // utilizzo day.js per stampare la data in messaggio inviato e di risposta
+        getCurrentTime(){
+            const currentTime = dayjs().format('DD/MM/YYYY HH:mm:ss');
+            return currentTime
+        },
 
+        addMessaggio(){  
+        
+            this.utenteAttivo.messaggi.push(
+                {
+                    data:  this.getCurrentTime() ,
+                    testo: this.nuovoMessaggio,
+                    stato: 'inviato'
+                },
+            )
 
+            this.nuovoMessaggio= ''
+            
+        },
+  
     }, 
+    
+});
 
-})
+
+
+
+
+
 

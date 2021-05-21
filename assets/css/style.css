@@ -140,4 +140,13 @@ input:focus {
     margin-left: auto;
 }
 
+.contatto_attivo{
+    display: flex;
+}
+
+.dettagli_contatto_attivo{
+    display: flex;
+    flex-direction: column;
+}
+
 
