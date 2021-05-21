@@ -93,6 +93,7 @@
     height: calc(100vh - (230px + 2.5vh));
     margin-left: -.75rem;
     background-image: url(../img/mine.jpg);
+
 }
 
 .componi{
@@ -110,19 +111,32 @@
 
 input:focus { 
     outline: none !important;
-    border-color: #009688;
-    box-shadow: 0 0 10px #009688;
+    box-shadow: 0 0 5px #009688;
 }
 
-/* .non_selezionato{
-    visibility: hidden;
-} */
 .non_selezionato{
     visibility: hidden;
 }
+
 .selezionato{
    visibility: visible;
 
+}
+
+.messaggi{
+    background-color: white;
+    width: max-content;
+    border-radius: 15px;
+}
+
+.messaggi .text-end{
+    font-size: .8rem;
+    color: #d0d0d0;
+}
+
+.ricevuto{
+    background-color: yellow;
+    margin-inline-start: auto;
 }
 
 

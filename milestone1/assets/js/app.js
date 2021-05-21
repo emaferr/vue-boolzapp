@@ -118,17 +118,12 @@ const app = new Vue ({
 
             const immagine = this.contatti[index].immagine;
 
-            const prova = this.conversazione;
-
             this.immagineAttiva = `./assets/img/avatar${immagine}.jpg`
 
             this.utenteAttivo = this.contatti[index];
 
             this.conversazione = this.contatti[index].messaggi;
 
-            
-
-            console.log(prova);
 
          
 
