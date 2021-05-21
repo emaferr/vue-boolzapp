@@ -114,6 +114,15 @@ input:focus {
     box-shadow: 0 0 10px #009688;
 }
 
+/* .non_selezionato{
+    visibility: hidden;
+} */
+.non_selezionato{
+    visibility: hidden;
+}
+.selezionato{
+   visibility: visible;
 
+}
 
 
