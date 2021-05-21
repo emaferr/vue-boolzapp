@@ -116,13 +116,15 @@
                   <!-- LISTA CONTATTI -->
                   <section class="lista_contatti">
 
-                    <ul class="px-3">
+                    <ul class="px-3 list-group list-group-flush">
 
-                      <li class="list-group flex-row mt-3 mb-4" v-for="(contatto, index) in contattiFiltrati" @click="selezioneContatto(index)">
-                        <img :src="'./assets/img/avatar' + contatto.immagine + '.jpg'" class="img-fluid avatar rounded-circle me-3" alt="">
+                      <li class="list-group-item flex-row " v-for="(contatto, index) in contattiFiltrati" @click="selezioneContatto(index)">
+                      
+                        <img :src="'./assets/img/avatar' + contatto.immagine + '.jpg'" class="img-fluid avatar rounded-circle me-3 py-2" alt="">
                         <span>{{contatto.nome}}</span>
+                        
                       </li>
-
+                      
                     </ul>
 
                   </section>
@@ -137,8 +139,15 @@
                       
                       <span class="d-block">{{item.testo}}</span>
                       <span class="d-block text-end">{{item.data}}</span>
-                
+                      <div :class="{visibile : item.stato === 'ricevuto'}" class="indicatore">
+                        <i class="fas fa-caret-down"></i>
+                      </div>
+                      <div :class="{visibile : item.stato === 'inviato'}" class="indicatore_inviato">
+                        <i class="fas fa-caret-down"></i>
+                      </div>
+
                     </div>
+                    
                   </div>
 
                   

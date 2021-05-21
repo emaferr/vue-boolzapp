@@ -49,6 +49,8 @@
 }
 
 /* MAIN */
+
+/* Sezione avviso */
 .avviso{
     background-color: #8EDAFC;
     display: flex;
@@ -61,6 +63,7 @@
     padding: .8rem .6rem;
 }
 
+/* Sezione cerca */
 .ricerca, .avviso a{
     font-size: .8rem;
 }
@@ -83,12 +86,14 @@
 
 }
 
+/* Sezione contatti */
 .lista_contatti{
     background-color: white;
     height: calc(100vh - 295px);
     overflow: scroll;
 }
 
+/* Sezione chat */
 .conversazione{
     height: calc(100vh - (230px + 2.5vh));
     margin-left: -.75rem;
@@ -97,6 +102,7 @@
 
 }
 
+/* Sezione scrivi un messaggio */
 .componi{
     background-color: #EAEAEA;
     height: 110px;
@@ -115,6 +121,7 @@ input:focus {
     box-shadow: 0 0 5px #009688;
 }
 
+/* Sezione contatti attivi */
 .non_selezionato{
     visibility: hidden;
 }
@@ -128,6 +135,7 @@ input:focus {
     background-color: #ffffff;
     width: max-content;
     border-radius: 15px;
+    position: relative;
 }
 
 .messaggi .text-end{
@@ -148,5 +156,31 @@ input:focus {
     display: flex;
     flex-direction: column;
 }
+
+/* Indicatore */
+.indicatore{
+    font-size: 2.5rem;
+    position: absolute;
+    top: -1.55rem;
+    left: -.6rem;
+    color: white; 
+    visibility: hidden;
+}
+
+.indicatore_inviato{
+    color: #D5F9BA;
+    font-size: 2.5rem;
+    position: absolute;
+    top: -1.55rem;
+    right: -.6rem;
+    visibility: hidden;
+}
+
+.visibile{
+    visibility: visible;
+}
+
+
+
 
 
