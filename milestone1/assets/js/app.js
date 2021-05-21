@@ -5,6 +5,11 @@
 // Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, 
 // visualizzare nome e immagine di ogni contatto
 
+Vue.component('mio-componente', {
+    template: '#mio-componente-template'
+  });
+
+
 const app = new Vue ({
 
     el:'#app',
@@ -12,7 +17,7 @@ const app = new Vue ({
     data:{
 
         contatti: [
-
+            
             {
                 nome: 'Michele',
                 immagine: '_1',
@@ -108,17 +113,24 @@ const app = new Vue ({
     methods: {
 
 
-        selezionaChat(index){
+        selezionaContatto(index){
+
 
             let nomeAttivo = document.getElementById("prova");
 
             nomeAttivo.innerHTML = this.contatti[index].nome;
-           
-            console.log(this.contatti[index].nome); 
-            console.log(this.contatti[index].immagine);
-        }
+
+            console.log(this.contatti[index].nome);
+                
+            this.contatti[0].immagine = this.contatti[index].immagine
+                
         
-    },
+
+           
+            
+        },
+
+    }, 
 
 })
 

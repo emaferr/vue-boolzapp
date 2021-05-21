@@ -61,16 +61,30 @@
 
                 <!-- SEZIONE CONTATTO ATTIVO -->
                 <div class="col sezione_contatti justify-content-between">
-                  <div class="contatto_attivo">
-                    <img src="./assets/img/avatar_1.jpg" class="img-fluid avatar rounded-circle" alt="...">
+                  <!-- <div class="contatto_attivo">
+                    <img id="prova2" :src="'./assets/img/avatar' + contatti[0].immagine + '.jpg'"  class="img-fluid avatar rounded-circle" alt="...">
                     <span id="prova" class="mx-1">Michele</span>
-                  </div>
+                  </div> 
                   
                   <div class="icone_top pe-4">
                     <i class="fas fa-search"></i>
                     <i class="fas fa-paperclip mx-3"></i>
                     <i class="fas fa-ellipsis-v"></i>
-                  </div>
+                  </div> -->
+                  
+                    <template :class id="mio-componente-template">
+                      <div class="contatto_attivo">
+                        <img id="prova2" :src="'./assets/img/avatar' + contatti[0].immagine + '.jpg'"  class="img-fluid avatar rounded-circle" alt="...">
+                        <span id="prova" class="mx-1">Michele</span>
+                      </div>  
+                      
+                      <div class="icone_top pe-4">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip mx-3"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                      </div>
+                    </template>
+
                 </div>
 
               </div>
@@ -113,7 +127,7 @@
 
                     <ul class="px-3">
 
-                      <li class="list-group flex-row mt-3 mb-4" v-for="(contatto, index) in contatti" @click="selezionaChat(index)">
+                      <li class="list-group flex-row mt-3 mb-4" v-for="(contatto, index) in contatti" @click="selezionaContatto(index)">
                         <img :src="'./assets/img/avatar' + contatto.immagine + '.jpg'" class="img-fluid avatar rounded-circle me-3" alt="">
                         <span>{{contatto.nome}}</span>
                       </li>
