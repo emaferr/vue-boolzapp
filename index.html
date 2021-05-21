@@ -110,7 +110,7 @@
                   <!-- BARRA DI RICERCA -->
                   <div class="barra_ricerca m-2">
                     <i class="fas fa-search"></i>
-                    <input class="ricerca text-center rounded-1 p-2" type="text" name="search" placeholder="Cerca o inizia una nuova chat">
+                    <input @keyup="ricerca" v-model="ricercaContatto" class="ricerca text-center rounded-1 p-2" type="text" name="search" placeholder="Cerca o inizia una nuova chat">
                   </div>
 
                   <!-- LISTA CONTATTI -->
@@ -118,7 +118,7 @@
 
                     <ul class="px-3">
 
-                      <li class="list-group flex-row mt-3 mb-4" v-for="(contatto, index) in contatti" @click="selezioneContatto(index)">
+                      <li class="list-group flex-row mt-3 mb-4" v-for="(contatto, index) in contattiFiltrati" @click="selezioneContatto(index)">
                         <img :src="'./assets/img/avatar' + contatto.immagine + '.jpg'" class="img-fluid avatar rounded-circle me-3" alt="">
                         <span>{{contatto.nome}}</span>
                       </li>

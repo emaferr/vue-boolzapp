@@ -111,6 +111,10 @@ const app = new Vue ({
 
         nuovoMessaggio : '',
 
+        contattiFiltrati: '',
+
+        ricercaContatto:''
+
     },
 
     methods: {
@@ -146,11 +150,47 @@ const app = new Vue ({
                 },
             )
 
-            this.nuovoMessaggio= ''
+            this.nuovoMessaggio= '';
             
+            // Dopo averla settata ottengo la risposta al messaggio inviato
+            this.rispostaMessaggio();
+            
+        },
+
+        rispostaMessaggio(){
+
+            setTimeout(function(){
+
+                app.utenteAttivo.messaggi.push(
+                    {
+                        data:  app.getCurrentTime() ,
+                        testo: 'Finalmente ci hai messo un eternità!',
+                        stato: 'ricevuto'
+                    }
+                );
+
+            }, 2000);
+        },
+
+        // Effettuo la ricerca cominciando da una variabile vuota dichiarata in precedenza
+        // Quella variabile adesso saranno i miei contatti che contengono i caratteri inseriti
+
+        // Grazie CodePen!!!!!
+
+        ricerca(){
+            this.contattiFiltrati = this.contatti.filter(contatto => {
+                return contatto.nome.toLowerCase().includes(this.ricercaContatto.toLowerCase())
+            });
         },
   
     }, 
+
+    // Dopo praticamente un ora capisco come mostrare la lista contatti prima della ricerca
+    mounted() {
+
+        this.contattiFiltrati = this.contatti
+        
+    },
     
 });
 
