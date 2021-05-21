@@ -243,6 +243,8 @@ const app = new Vue ({
 
         ],
 
+        // Creo variabili vuote per elaborare dati successivamente
+
         immagineAttiva : '',
 
         utenteAttivo : '',

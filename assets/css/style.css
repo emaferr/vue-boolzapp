@@ -1,7 +1,21 @@
 /* UNIVERSALI */
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
 .avatar{
     width: 60px;
 }
+
+.icone_top i:hover, .componi i:hover, .barra_ricerca i:hover{
+    color: #00968771;
+    cursor: pointer;
+}
+
+li > span, .avatar, .contatto_attivo span, .utente span{
+    cursor: pointer;
+}
+
 
 /* BODY */
 .sfondo_principale{
@@ -186,7 +200,6 @@ input:focus {
     background-size: cover;
     background-position: center;
 }
-
 
 
 
