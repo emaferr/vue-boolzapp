@@ -48,7 +48,7 @@
 
                   <div class="utente">
                     <img src="./assets/img/avatar_8.jpg" class="img-fluid avatar rounded-circle" alt="...">
-                    <span class="mx-1">Emanuele Ferrauto</span>
+                    <span class="mx-1">Emanuele</span>
                   </div>
                   
                   <div class="icone_top">
@@ -62,8 +62,8 @@
                 <!-- SEZIONE CONTATTO ATTIVO -->
                 <div class="col sezione_contatti justify-content-between">
                   <div class="contatto_attivo">
-                    <img src="./assets/img/avatar_8.jpg" class="img-fluid avatar rounded-circle" alt="...">
-                    <span class="mx-1">Nome Utente</span>
+                    <img src="./assets/img/avatar_1.jpg" class="img-fluid avatar rounded-circle" alt="...">
+                    <span id="prova" class="mx-1">Michele</span>
                   </div>
                   
                   <div class="icone_top pe-4">
@@ -113,7 +113,7 @@
 
                     <ul class="px-3">
 
-                      <li class="list-group flex-row mt-3 mb-4" v-for="(contatto, index) in contatti" @click='selezionaChat'>
+                      <li class="list-group flex-row mt-3 mb-4" v-for="(contatto, index) in contatti" @click="selezionaChat(index)">
                         <img :src="'./assets/img/avatar' + contatto.immagine + '.jpg'" class="img-fluid avatar rounded-circle me-3" alt="">
                         <span>{{contatto.nome}}</span>
                       </li>

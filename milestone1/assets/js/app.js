@@ -7,8 +7,6 @@
 
 const app = new Vue ({
 
-    contatore : 0,
-
     el:'#app',
 
     data:{
@@ -108,12 +106,16 @@ const app = new Vue ({
     },
 
     methods: {
-        
-        selezionaChat(contatore){
-            
-            console.log(contatore);
 
-            
+
+        selezionaChat(index){
+
+            let nomeAttivo = document.getElementById("prova");
+
+            nomeAttivo.innerHTML = this.contatti[index].nome;
+           
+            console.log(this.contatti[index].nome); 
+            console.log(this.contatti[index].immagine);
         }
         
     },
