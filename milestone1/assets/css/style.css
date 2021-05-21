@@ -93,6 +93,7 @@
     height: calc(100vh - (230px + 2.5vh));
     margin-left: -.75rem;
     background-image: url(../img/mine.jpg);
+    overflow-x: auto;
 
 }
 
@@ -124,19 +125,19 @@ input:focus {
 }
 
 .messaggi{
-    background-color: white;
+    background-color: #ffffff;
     width: max-content;
     border-radius: 15px;
 }
 
 .messaggi .text-end{
     font-size: .8rem;
-    color: #d0d0d0;
+    color: #b6b6b6;
 }
 
 .ricevuto{
-    background-color: yellow;
-    margin-inline-start: auto;
+    background-color: #D5F9BA;
+    margin-left: auto;
 }
 
 
