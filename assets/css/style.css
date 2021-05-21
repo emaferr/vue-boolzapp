@@ -180,6 +180,15 @@ input:focus {
     visibility: visible;
 }
 
+.inizio{
+
+    background-image: url(/assets/img/Schermata\ 2021-05-21\ alle\ 23.03.12.png);
+    background-size: cover;
+    background-position: center;
+}
+
+
+
 
 
 

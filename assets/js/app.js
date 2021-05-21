@@ -101,6 +101,146 @@ const app = new Vue ({
 
             },
 
+            {
+                nome: 'Enea',
+                immagine: '_5',
+                visibile: true,
+                messaggi: [
+                    {
+                        data: '10/01/2020 15:30:55',
+                        testo: 'Ma che fine hai fatto?',
+                        stato: 'inviato'
+                    },
+                    {
+                        data: '10/01/2020 15:50:00',
+                        testo: 'Sono fuori per lavoro!',
+                        stato: 'ricevuto'
+                    },
+                    {
+                        data: '10/01/2020 15:55:55',
+                        testo: 'Ok!',
+                        stato: 'inviato'
+                    },
+                    {
+                        data: '10/01/2020 16:10:00',
+                        testo: 'Ci vediamo appena rientro!',
+                        stato: 'ricevuto'
+                    },
+                ],
+
+            },
+
+            {
+                nome: 'Ludovica',
+                immagine: '_6',
+                visibile: true,
+                messaggi: [
+                    {
+                        data: '10/01/2020 15:30:55',
+                        testo: 'Lo sai che ha aperto una nuova pizzeria?',
+                        stato: 'inviato'
+                    },
+                    {
+                        data: '10/01/2020 15:50:00',
+                        testo: 'Sono fuori per lavoro!',
+                        stato: 'ricevuto'
+                    },
+                    {
+                        data: '10/01/2020 15:30:55',
+                        testo: 'Come stai?',
+                        stato: 'inviato'
+                    },
+                    {
+                        data: '20/03/2020 16:30:55',
+                        testo: 'Bene grazie! Stasera ci vediamo?',
+                        stato: 'ricevuto'
+                    },
+
+                    {
+                        data: '10/01/2020 15:30:55',
+                        testo: 'Va benissimo',
+                        stato: 'inviato'
+                    },
+                    
+                    {
+                        data: '10/01/2020 16:10:00',
+                        testo: 'Ci vediamo appena rientro!',
+                        stato: 'ricevuto'
+                    },
+                ],
+
+            },
+
+            {
+                nome: 'Enzo',
+                immagine: '_7',
+                visibile: true,
+                messaggi: [
+                    {
+                        data: '10/01/2020 15:30:55',
+                        testo: 'Lo sai che ha aperto una nuova pizzeria?',
+                        stato: 'ricevuto'
+                    },
+                    {
+                        data: '10/01/2020 15:50:00',
+                        testo: 'Sono fuori per lavoro!',
+                        stato: 'ricevuto'
+                    },
+                    {
+                        data: '10/01/2020 15:30:55',
+                        testo: 'Come stai?',
+                        stato: 'inviato'
+                    },
+                    {
+                        data: '20/03/2020 16:30:55',
+                        testo: 'Bene grazie! Stasera ci vediamo?',
+                        stato: 'ricevuto'
+                    },
+
+                    {
+                        data: '10/01/2020 15:30:55',
+                        testo: 'Va benissimo',
+                        stato: 'inviato'
+                    },
+                    
+                    {
+                        data: '10/01/2020 16:10:00',
+                        testo: 'Ci vediamo appena rientro!',
+                        stato: 'inviato'
+                    },
+                ],
+
+            },
+            {
+                nome: 'Benedetto',
+                immagine: '_9',
+                visibile: true,
+                messaggi: [
+                    {
+                        data: '10/01/2020 15:30:55',
+                        testo: 'Lo sai che ha aperto una nuova pizzeria?',
+                        stato: 'ricevuto'
+                    },
+                    {
+                        data: '10/01/2020 15:50:00',
+                        testo: 'Si, ma preferirei andare al cinema',
+                        stato: 'ricevuto'
+                    },
+                    {
+                        data: '10/01/2020 15:30:55',
+                        testo: 'Va benissimo',
+                        stato: 'inviato'
+                    },
+                    
+                    {
+                        data: '10/01/2020 16:10:00',
+                        testo: 'Ci vediamo appena rientro!',
+                        stato: 'inviato'
+                    },
+                ],
+
+            },
+
         ],
 
         immagineAttiva : '',
@@ -191,8 +331,14 @@ const app = new Vue ({
         this.contattiFiltrati = this.contatti
         
     },
+
+  
     
 });
+
+
+
+
 
 
 

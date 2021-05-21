@@ -134,7 +134,7 @@
                 <!-- SEZIONE CHAT -->
                 <div class="chat col overflow-scroll">
 
-                  <div class="conversazione px-5 pt-4 overflow-scroll">
+                  <div :class="{inizio : utenteAttivo.nome === contatti.nome}" class="conversazione px-5 pt-4 overflow-scroll">
                     <div :class="{ricevuto : item.stato === 'inviato'}" class="messaggi pt-3 pb-2 px-3 my-3" v-for="(item, index) in conversazione" :key="index">
                       
                       <span class="d-block">{{item.testo}}</span>
@@ -172,6 +172,10 @@
           <!-- FINE MAIN -->
 
         </div>
+        <!-- FINE APP VUE -->
+
+
+
 
         
 
