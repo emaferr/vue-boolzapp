@@ -126,7 +126,7 @@
 
                         <div class="ultimo_messaggio">
                           <span>{{contatto.nome}}</span>
-                          <span class="text-black-50" v-for="(messaggio, key) in contatto.messaggi" v-if="key + 1 === contatto.messaggi.length"><i :class="{blue : messaggio.visualizzato === true }" v-if="messaggio.stato === 'inviato'" class="fas fa-check-double spunte me-1"></i>{{messaggio.testo}}</span>
+                          <span class="text-black-50" v-for="(messaggio, key) in contatto.messaggi" v-if="key + 1 === contatto.messaggi.length"><i :class="{blue : key + 1 != contatto.messaggi.length }" v-if="messaggio.stato === 'inviato'" class="fas fa-check-double spunte me-1"></i>{{messaggio.testo}}</span>
                         </div>
 
                         <span class="text-black-50 ora" v-for="(messaggio, key) in contatto.messaggi" v-if="key + 1 === contatto.messaggi.length">{{messaggio.ora}}</span>
@@ -148,7 +148,7 @@
                       
                       <!-- <button @click="deleteMessaggio(index)">Elimina</button> -->
                       <span style="margin-right: 5rem;" class="d-block">{{item.testo}}</span>
-                      <span class="d-block text-end">{{item.ora}} <i :class="{blue : item.visualizzato === true }" v-if="item.stato === 'inviato'" class="fas fa-check-double spunte"></i></span>
+                      <span class="d-block text-end">{{item.ora}} <i :class="{blue : index + 1 != conversazione.length }" v-if="item.stato === 'inviato'" class="fas fa-check-double spunte"></i></span>
                       <div :class="{visibile : item.stato === 'ricevuto'}" class="indicatore">
                         <i class="fas fa-caret-down"></i>
                       </div>

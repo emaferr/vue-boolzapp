@@ -22,16 +22,12 @@ const app = new Vue ({
                         data: '10/01/2020 15:30:55',
                         ora:   '15:30',
                         testo: 'Hai portato a spasso il cane?',
-                        stato: 'inviato',
-                        visualizzato: true
-                    },
+                        stato: 'inviato',                    },
                     {
                         data: '10/01/2020 15:50:00',
                         ora:   '15:50',
                         testo: 'Ricordati di dargli da mangiare',
-                        stato: 'inviato',
-                        visualizzato: true
-                    },
+                        stato: 'inviato',                    },
                     {
                         data: '10/01/2020 16:15:22',
                         ora:   '16:15',
@@ -50,9 +46,7 @@ const app = new Vue ({
                         data: '20/03/2020 16:30:00',
                         ora:   '16:30',
                         testo: 'Ciao come stai?',
-                        stato: 'inviato',
-                        visualizzato: true
-                    },
+                        stato: 'inviato',                    },
                     {
                         data: '20/03/2020 16:30:55',
                         ora:   '16:30',
@@ -63,9 +57,7 @@ const app = new Vue ({
                         data: '20/03/2020 16:35:00',
                         ora:   '16:35',
                         testo: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        stato: 'inviato',
-                        visualizzato: true
-                    }
+                        stato: 'inviato',                    }
                 ],
             },
         
@@ -84,9 +76,7 @@ const app = new Vue ({
                         data: '28/03/2020 10:20:10',
                         ora:   '10:20',
                         testo: 'Sicuro di non aver sbagliato chat?',
-                        stato: 'inviato',
-                        visualizzato: true
-                    },
+                        stato: 'inviato',                    },
                     {
                         data: '28/03/2020 16:15:22',
                         ora:   '16:15',
@@ -105,9 +95,7 @@ const app = new Vue ({
                         data: '10/01/2020 15:30:55',
                         ora:   '15:30',
                         testo: 'Lo sai che ha aperto una nuova pizzeria?',
-                        stato: 'inviato',
-                        visualizzato: true
-                    },
+                        stato: 'inviato',                    },
                     {
                         data: '10/01/2020 15:50:00',
                         ora:   '15:50',
@@ -127,9 +115,7 @@ const app = new Vue ({
                         data: '10/01/2020 15:30:55',
                         ora:   '15:30',
                         testo: 'Ma che fine hai fatto?',
-                        stato: 'inviato',
-                        visualizzato: true
-                    },
+                        stato: 'inviato',                    },
                     {
                         data: '10/01/2020 15:50:00',
                         ora:   '15:50',
@@ -140,9 +126,7 @@ const app = new Vue ({
                         data: '10/01/2020 15:55:55',
                         ora:   '15:55',
                         testo: 'Ok!',
-                        stato: 'inviato',
-                        visualizzato: true
-                    },
+                        stato: 'inviato',                    },
                     {
                         data: '10/01/2020 16:10:00',
                         ora:   '16:10',
@@ -162,9 +146,7 @@ const app = new Vue ({
                         data: '10/01/2020 15:30:55',
                         ora:   '15:30',
                         testo: 'Lo sai che ha aperto una nuova pizzeria?',
-                        stato: 'inviato',
-                        visualizzato: true
-                    },
+                        stato: 'inviato',                    },
                     {
                         data: '10/01/2020 15:50:00',
                         ora:   '15:50',
@@ -175,9 +157,7 @@ const app = new Vue ({
                         data: '10/01/2020 15:30:55',
                         ora:   '15:30',
                         testo: 'Come stai?',
-                        stato: 'inviato',
-                        visualizzato: true
-                    },
+                        stato: 'inviato',                    },
                     {
                         data: '20/03/2020 16:30:55',
                         ora:   '16:30',
@@ -189,9 +169,7 @@ const app = new Vue ({
                         data: '10/01/2020 15:30:55',
                         ora:   '15:30',
                         testo: 'Va benissimo',
-                        stato: 'inviato',
-                        visualizzato: true
-                    },
+                        stato: 'inviato',                    },
                     
                     {
                         data: '10/01/2020 16:10:00',
@@ -224,9 +202,7 @@ const app = new Vue ({
                         data: '10/01/2020 15:30:55',
                         ora:   '15:30',
                         testo: 'Come stai?',
-                        stato: 'inviato',
-                        visualizzato: true
-                    },
+                        stato: 'inviato',                    },
                     {
                         data: '20/03/2020 16:30:55',
                         ora:   '16:30',
@@ -239,7 +215,6 @@ const app = new Vue ({
                         ora:   '15:30',
                         testo: 'Va benissimo',
                         stato: 'inviato',
-                        visualizzato: false
                     },
                     
                     {
@@ -247,7 +222,6 @@ const app = new Vue ({
                         ora:   '16:10',
                         testo: 'Ci vediamo appena rientro!',
                         stato: 'inviato',
-                        visualizzato: false
                     },
                 ],
 
@@ -274,7 +248,6 @@ const app = new Vue ({
                         ora:   '15:30',
                         testo: 'Va benissimo',
                         stato: 'inviato',
-                        visualizzato: false
                     },
                     
                     {
@@ -282,7 +255,6 @@ const app = new Vue ({
                         ora:   '16:10',
                         testo: 'Ci vediamo appena rientro!',
                         stato: 'inviato',
-                        visualizzato: false
                     },
                 ],
 
@@ -309,9 +281,6 @@ const app = new Vue ({
     },
 
     methods: {
-
-        
-
 
         selezioneContatto(index){
 
@@ -342,9 +311,9 @@ const app = new Vue ({
         
             this.conversazione.push(
                 {
-                    data:  this.getCurrentTime2() ,
+                    ora:  this.getCurrentTime2() ,
                     testo: this.nuovoMessaggio,
-                    stato: 'inviato'
+                    stato: 'inviato',
                 },
             )
 
@@ -368,16 +337,17 @@ const app = new Vue ({
 
                 app.utenteAttivo.messaggi.push(
                     {
-                        data:  app.getCurrentTime2() ,
+                        ora:  app.getCurrentTime2() ,
                         testo: 'Finalmente ci hai messo un eternità!',
-                        stato: 'ricevuto'
+                        stato: 'ricevuto',
                     }
                 );
 
+               
             }, 2000);
+            
         },
-
-
+      
         // Effettuo la ricerca cominciando da una variabile vuota dichiarata in precedenza
         // Quella variabile adesso saranno i miei contatti che contengono i caratteri inseriti
 
