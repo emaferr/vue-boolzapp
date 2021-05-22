@@ -100,7 +100,7 @@ li , .avatar, .contatto_attivo span, .utente span{
 .ricerca{
     width: 100%;
     border: none;
-
+    padding-left: 4rem;
 }
 
 /* Sezione contatti */

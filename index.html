@@ -14,10 +14,10 @@
         <!-- Sttle CSS -->
         <link rel="stylesheet" href="./assets/css/style.css">
 
-        <title>Vue | BoolzApp</title>
+        <title> BoolzApp</title>
 
         <!-- Favicon -->
-        <link rel="icon" href="" type="image/png" />
+        <link rel="icon" href="./assets/img/BoolzApp-png-icon_3827547.png" type="image/png" />
 
         <!-- Google fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -65,7 +65,7 @@
                 <div class="col sezione_contatti justify-content-between non_selezionato " :class="{selezionato : utenteAttivo}">
 
                   <div class="contatto_attivo">
-                    <img id="prova2" :src="immagineAttiva"  class="img-fluid avatar rounded-circle" :class="" alt="...">
+                    <img :src="immagineAttiva"  class="img-fluid avatar rounded-circle" alt="...">
                     <div class="dettagli_contatto_attivo mx-2">
                       <span class="">{{utenteAttivo.nome}}</span>
                       <span style="font-size: .8rem;" class="text-black-50">Ultimo accesso oggi alle {{getCurrentTime()}}</span>
@@ -112,7 +112,7 @@
                   <!-- BARRA DI RICERCA -->
                   <div class="barra_ricerca m-2">
                     <i class="fas fa-search"></i>
-                    <input @keyup="ricerca" v-model="ricercaContatto" class="ricerca text-center rounded-1 p-2" type="text" name="search" placeholder="Cerca o inizia una nuova chat">
+                    <input @keyup="ricerca" v-model="ricercaContatto" class="ricerca rounded-pill py-2" type="text" name="search" placeholder="Cerca o inizia una nuova chat">
                   </div>
 
                   <!-- LISTA CONTATTI -->
@@ -139,6 +139,7 @@
                   <div :class="{inizio : utenteAttivo.nome === contatti.nome}" class="conversazione px-5 pt-4 overflow-scroll">
                     <div :class="{ricevuto : item.stato === 'inviato'}" class="messaggi pt-3 pb-2 px-3 my-3" v-for="(item, index) in conversazione" :key="index">
                       
+                      <button @click="deleteMessaggio(index)">Elimina</button>
                       <span class="d-block">{{item.testo}}</span>
                       <span class="d-block text-end">{{item.data}}</span>
                       <div :class="{visibile : item.stato === 'ricevuto'}" class="indicatore">
@@ -158,7 +159,7 @@
                   <div class="componi py-3">
 
                     <i class="far fa-smile icone_bottom mx-3"></i>
-                    <input @keydown.enter="addMessaggio" id="nuovo_messaggio" v-model="nuovoMessaggio" style="width: 100%;" class="border-0 rounded-3 px-3 py-4" type="text" placeholder="Scrivi un messaggio">
+                    <input @keydown.enter="addMessaggio" id="nuovo_messaggio" v-model="nuovoMessaggio" style="width: 100%;" class="border-0 rounded-pill px-4 py-3" type="text" placeholder="Scrivi un messaggio">
                     <i class="fas fa-microphone icone_bottom mx-3"></i>
 
                   </div>

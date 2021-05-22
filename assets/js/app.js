@@ -14,7 +14,7 @@ const app = new Vue ({
         contatti: [
             
             {
-                nome: 'Michele',
+                nome: 'Matteo',
                 immagine: '_1',
                 visibile: true,
                 messaggi: [
@@ -60,7 +60,7 @@ const app = new Vue ({
             },
         
             {
-                nome: 'Samuele',
+                nome: 'Valerio',
                 immagine: '_3',
                 visibile: true,
                 messaggi: [
@@ -83,7 +83,7 @@ const app = new Vue ({
             },
 
             {
-                nome: 'Luisa',
+                nome: 'Anita',
                 immagine: '_4',
                 visibile: true,
                 messaggi: [
@@ -131,7 +131,7 @@ const app = new Vue ({
             },
 
             {
-                nome: 'Ludovica',
+                nome: 'Martina',
                 immagine: '_6',
                 visibile: true,
                 messaggi: [
@@ -172,7 +172,7 @@ const app = new Vue ({
             },
 
             {
-                nome: 'Enzo',
+                nome: 'Roberto',
                 immagine: '_7',
                 visibile: true,
                 messaggi: [
@@ -212,7 +212,7 @@ const app = new Vue ({
 
             },
             {
-                nome: 'Benedetto',
+                nome: 'Michele',
                 immagine: '_9',
                 visibile: true,
                 messaggi: [
@@ -253,6 +253,8 @@ const app = new Vue ({
 
         nuovoMessaggio : '',
 
+        messaggiEliminati : '',
+
         contattiFiltrati: '',
 
         ricercaContatto:''
@@ -274,6 +276,8 @@ const app = new Vue ({
 
             this.conversazione = this.contatti[index].messaggi;
 
+            this.messaggiEliminati = [];
+
         },
 
         // utilizzo day.js per stampare la data in messaggio inviato e di risposta
@@ -282,11 +286,16 @@ const app = new Vue ({
             return currentTime
         },
 
+        getCurrentTime2(){
+            const currentTime = dayjs().format('HH:mm');
+            return currentTime
+        },
+
         addMessaggio(){  
         
-            this.utenteAttivo.messaggi.push(
+            this.conversazione.push(
                 {
-                    data:  this.getCurrentTime() ,
+                    data:  this.getCurrentTime2() ,
                     testo: this.nuovoMessaggio,
                     stato: 'inviato'
                 },
@@ -299,13 +308,20 @@ const app = new Vue ({
             
         },
 
+        // Elimino il messaggio al click ma mi attengo alle politiche mondiali 
+        // e conservo comunque il messaggio :) in un array 
+        deleteMessaggio(index){
+            this.messaggiEliminati.push(this.conversazione[index])
+            this.conversazione.splice(index,1);
+        },
+
         rispostaMessaggio(){
 
             setTimeout(function(){
 
                 app.utenteAttivo.messaggi.push(
                     {
-                        data:  app.getCurrentTime() ,
+                        data:  app.getCurrentTime2() ,
                         testo: 'Finalmente ci hai messo un eternità!',
                         stato: 'ricevuto'
                     }
@@ -313,6 +329,7 @@ const app = new Vue ({
 
             }, 2000);
         },
+
 
         // Effettuo la ricerca cominciando da una variabile vuota dichiarata in precedenza
         // Quella variabile adesso saranno i miei contatti che contengono i caratteri inseriti
