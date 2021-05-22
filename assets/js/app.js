@@ -20,16 +20,21 @@ const app = new Vue ({
                 messaggi: [
                     {
                         data: '10/01/2020 15:30:55',
+                        ora:   '15:30',
                         testo: 'Hai portato a spasso il cane?',
-                        stato: 'inviato'
+                        stato: 'inviato',
+                        visualizzato: true
                     },
                     {
                         data: '10/01/2020 15:50:00',
+                        ora:   '15:50',
                         testo: 'Ricordati di dargli da mangiare',
-                        stato: 'inviato'
+                        stato: 'inviato',
+                        visualizzato: true
                     },
                     {
                         data: '10/01/2020 16:15:22',
+                        ora:   '16:15',
                         testo: 'Tutto fatto!',
                         stato: 'ricevuto'
                     }
@@ -43,18 +48,23 @@ const app = new Vue ({
                 messaggi: [
                     {
                         data: '20/03/2020 16:30:00',
+                        ora:   '16:30',
                         testo: 'Ciao come stai?',
-                        stato: 'inviato'
+                        stato: 'inviato',
+                        visualizzato: true
                     },
                     {
                         data: '20/03/2020 16:30:55',
+                        ora:   '16:30',
                         testo: 'Bene grazie! Stasera ci vediamo?',
                         stato: 'ricevuto'
                     },
                     {
                         data: '20/03/2020 16:35:00',
+                        ora:   '16:35',
                         testo: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        stato: 'inviato'
+                        stato: 'inviato',
+                        visualizzato: true
                     }
                 ],
             },
@@ -66,16 +76,20 @@ const app = new Vue ({
                 messaggi: [
                     {
                         data: '28/03/2020 10:10:40',
+                        ora:   '10:10',
                         testo: 'La Marianna va in campagna',
                         stato: 'ricevuto'
                     },
                     {
                         data: '28/03/2020 10:20:10',
+                        ora:   '10:20',
                         testo: 'Sicuro di non aver sbagliato chat?',
-                        stato: 'inviato'
+                        stato: 'inviato',
+                        visualizzato: true
                     },
                     {
                         data: '28/03/2020 16:15:22',
+                        ora:   '16:15',
                         testo: 'Ah scusa!',
                         stato: 'ricevuto'
                     }
@@ -89,11 +103,14 @@ const app = new Vue ({
                 messaggi: [
                     {
                         data: '10/01/2020 15:30:55',
+                        ora:   '15:30',
                         testo: 'Lo sai che ha aperto una nuova pizzeria?',
-                        stato: 'inviato'
+                        stato: 'inviato',
+                        visualizzato: true
                     },
                     {
                         data: '10/01/2020 15:50:00',
+                        ora:   '15:50',
                         testo: 'Si, ma preferirei andare al cinema',
                         stato: 'ricevuto'
                     }
@@ -108,21 +125,27 @@ const app = new Vue ({
                 messaggi: [
                     {
                         data: '10/01/2020 15:30:55',
+                        ora:   '15:30',
                         testo: 'Ma che fine hai fatto?',
-                        stato: 'inviato'
+                        stato: 'inviato',
+                        visualizzato: true
                     },
                     {
                         data: '10/01/2020 15:50:00',
+                        ora:   '15:50',
                         testo: 'Sono fuori per lavoro!',
                         stato: 'ricevuto'
                     },
                     {
                         data: '10/01/2020 15:55:55',
+                        ora:   '15:55',
                         testo: 'Ok!',
-                        stato: 'inviato'
+                        stato: 'inviato',
+                        visualizzato: true
                     },
                     {
                         data: '10/01/2020 16:10:00',
+                        ora:   '16:10',
                         testo: 'Ci vediamo appena rientro!',
                         stato: 'ricevuto'
                     },
@@ -137,33 +160,42 @@ const app = new Vue ({
                 messaggi: [
                     {
                         data: '10/01/2020 15:30:55',
+                        ora:   '15:30',
                         testo: 'Lo sai che ha aperto una nuova pizzeria?',
-                        stato: 'inviato'
+                        stato: 'inviato',
+                        visualizzato: true
                     },
                     {
                         data: '10/01/2020 15:50:00',
+                        ora:   '15:50',
                         testo: 'Sono fuori per lavoro!',
                         stato: 'ricevuto'
                     },
                     {
                         data: '10/01/2020 15:30:55',
+                        ora:   '15:30',
                         testo: 'Come stai?',
-                        stato: 'inviato'
+                        stato: 'inviato',
+                        visualizzato: true
                     },
                     {
                         data: '20/03/2020 16:30:55',
+                        ora:   '16:30',
                         testo: 'Bene grazie! Stasera ci vediamo?',
                         stato: 'ricevuto'
                     },
 
                     {
                         data: '10/01/2020 15:30:55',
+                        ora:   '15:30',
                         testo: 'Va benissimo',
-                        stato: 'inviato'
+                        stato: 'inviato',
+                        visualizzato: true
                     },
                     
                     {
                         data: '10/01/2020 16:10:00',
+                        ora:   '16:10',
                         testo: 'Ci vediamo appena rientro!',
                         stato: 'ricevuto'
                     },
@@ -178,35 +210,44 @@ const app = new Vue ({
                 messaggi: [
                     {
                         data: '10/01/2020 15:30:55',
+                        ora:   '15:30',
                         testo: 'Lo sai che ha aperto una nuova pizzeria?',
                         stato: 'ricevuto'
                     },
                     {
                         data: '10/01/2020 15:50:00',
+                        ora:   '15:50',
                         testo: 'Sono fuori per lavoro!',
                         stato: 'ricevuto'
                     },
                     {
                         data: '10/01/2020 15:30:55',
+                        ora:   '15:30',
                         testo: 'Come stai?',
-                        stato: 'inviato'
+                        stato: 'inviato',
+                        visualizzato: true
                     },
                     {
                         data: '20/03/2020 16:30:55',
+                        ora:   '16:30',
                         testo: 'Bene grazie! Stasera ci vediamo?',
                         stato: 'ricevuto'
                     },
 
                     {
                         data: '10/01/2020 15:30:55',
+                        ora:   '15:30',
                         testo: 'Va benissimo',
-                        stato: 'inviato'
+                        stato: 'inviato',
+                        visualizzato: false
                     },
                     
                     {
                         data: '10/01/2020 16:10:00',
+                        ora:   '16:10',
                         testo: 'Ci vediamo appena rientro!',
-                        stato: 'inviato'
+                        stato: 'inviato',
+                        visualizzato: false
                     },
                 ],
 
@@ -218,24 +259,30 @@ const app = new Vue ({
                 messaggi: [
                     {
                         data: '10/01/2020 15:30:55',
+                        ora:   '15:30',
                         testo: 'Lo sai che ha aperto una nuova pizzeria?',
                         stato: 'ricevuto'
                     },
                     {
                         data: '10/01/2020 15:50:00',
+                        ora:   '15:50',
                         testo: 'Si, ma preferirei andare al cinema',
                         stato: 'ricevuto'
                     },
                     {
                         data: '10/01/2020 15:30:55',
+                        ora:   '15:30',
                         testo: 'Va benissimo',
-                        stato: 'inviato'
+                        stato: 'inviato',
+                        visualizzato: false
                     },
                     
                     {
                         data: '10/01/2020 16:10:00',
+                        ora:   '16:10',
                         testo: 'Ci vediamo appena rientro!',
-                        stato: 'inviato'
+                        stato: 'inviato',
+                        visualizzato: false
                     },
                 ],
 
@@ -257,7 +304,7 @@ const app = new Vue ({
 
         contattiFiltrati: '',
 
-        ricercaContatto:''
+        ricercaContatto:'',
 
     },
 
@@ -350,6 +397,8 @@ const app = new Vue ({
         this.contattiFiltrati = this.contatti
         
     },
+
+    
 
   
     

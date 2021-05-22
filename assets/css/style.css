@@ -178,7 +178,7 @@ input:focus {
 .indicatore{
     font-size: 2.5rem;
     position: absolute;
-    top: -1.42rem;
+    top: -.95rem;
     left: -.6rem;
     color: white; 
     visibility: hidden;
@@ -188,7 +188,7 @@ input:focus {
     color: #D5F9BA;
     font-size: 2.5rem;
     position: absolute;
-    top: -1.42rem;
+    top: -.95rem;
     right: -.6rem;
     visibility: hidden;
 }
@@ -203,6 +203,35 @@ input:focus {
     background-size: cover;
     background-position: center;
 }
+
+.spunte{
+    font-size: .6rem;
+    margin-left: 1px;
+    margin-bottom: 4px;
+    vertical-align: middle;
+}
+
+.blue{
+    color: #5fccff;
+}
+
+.lista_contatti .text-black-50{
+    font-size: .8rem;
+}
+
+.ultimo_messaggio{
+    display: inline-grid;
+    vertical-align: middle;
+}
+
+.ora{
+    position: absolute;
+    right: 4%;
+    top: 16%;
+}
+
+
+
 
 
 
