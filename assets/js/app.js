@@ -264,6 +264,8 @@ const app = new Vue ({
 
         ],
 
+        itemToShow: -1,
+
         // Creo variabili vuote per elaborare dati successivamente
 
         immagineAttiva : '',
@@ -280,6 +282,16 @@ const app = new Vue ({
 
         ricercaContatto:'',
 
+    },
+
+    methods: {
+        toggle: function(index){
+            if( this.isOpenIndex !== null ){
+               this.isOpenIndex = ( this.isOpenIndex == index ) ? null : index;
+            } else {
+               this.isOpenIndex = index;
+            }
+        }
     },
 
     methods: {
@@ -370,13 +382,11 @@ const app = new Vue ({
         
     },
 
-  
-
     
 
-  
-    
 });
+
+
 
 
 
