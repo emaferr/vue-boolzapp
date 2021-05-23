@@ -239,6 +239,7 @@ input:focus {
     color: #5fccff;
 }
 
+/* Dropdown menù */
 #drop_elimina{
     position: absolute;
     top: 12px;
@@ -257,7 +258,7 @@ input:focus {
     cursor: pointer;
 }
 
-#demo{
+#drop{
     position: absolute;
     right: 0px;
     top: 32px;
@@ -265,14 +266,19 @@ input:focus {
     font-size: .8rem;
 }
 
-/* .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s;
+#drop_view {
+  display: none;
 }
-
-.fade-enter, .fade-leave-to{
-    opacity: 0;
-} */
-
+#drop_view.is_active {
+  display: block;
+}
+#drop_view .list-group-item {
+  cursor: pointer;
+}
+#drop_view .list-group-item:hover {
+  background-color: #f6f6f6;
+}
+  
 
 
 

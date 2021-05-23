@@ -264,7 +264,6 @@ const app = new Vue ({
 
         ],
 
-        itemToShow: -1,
 
         // Creo variabili vuote per elaborare dati successivamente
 
@@ -372,17 +371,17 @@ const app = new Vue ({
                 return contatto.nome.toLowerCase().includes(this.ricercaContatto.toLowerCase())
             });
         },
+
+        
   
     }, 
 
     // Dopo praticamente un ora capisco come mostrare la lista contatti prima della ricerca
     mounted() {
-
         this.contattiFiltrati = this.contatti
-        
     },
 
-    
+ 
 
 });
 

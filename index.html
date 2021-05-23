@@ -148,13 +148,13 @@
                       
                       <!-- <button @click="deleteMessaggio(index)">Elimina</button> -->
                       
-                      <div v-on:click="itemToShow =index" id="drop_elimina">
+                      <div v-on:click="show = show === index ? null : index" id="drop_elimina">
                         <i class="fas fa-chevron-down"></i>
                       </div>
 
-                      <div id="demo" v-if="">
-                        <div name="fade">
-                          <div  v-if="itemToShow == index" class="list-group">
+                      <div id="drop" v-if="show === index">
+                        <div>
+                          <div class="list-group">
                             <a href="#" class="list-group-item list-group-item-action py-3">Info messaggio</a>
                             <a href="#" @click="deleteMessaggio(index)" class="list-group-item list-group-item-action py-3">Elimina messaggio</a>
                           </div>
