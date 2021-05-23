@@ -102,9 +102,9 @@
 
                     <i class="fas fa-bell-slash rounded-circle me-2"></i>
                     
-                    <div class="d-inline text-nowrap overflow-auto">
+                    <div class="d-inline text-nowrap overflow-auto pt-1">
                       <span class="">Ricevi notifiche di nuovi messaggi</span>
-                      <a class="d-block text-black-50" href="#">Attiva notifiche desktop</a>
+                      <a class="d-block text-black-50" href="#">Attiva notifiche desktop <i style="font-size: .7rem;" class="fas fa-chevron-right"></i> </a>
                     </div>
                     
                   </div>
@@ -147,6 +147,20 @@
                     <div style="line-height: .5rem;" :class="{ricevuto : item.stato === 'inviato'}" class="messaggi pt-3 pb-2 px-3 my-3" v-for="(item, index) in conversazione" :key="index">
                       
                       <!-- <button @click="deleteMessaggio(index)">Elimina</button> -->
+                      
+                      <div v-on:click="show = !show" id="drop_elimina">
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+
+                      <div id="demo" v-if="">
+                        <div name="fade">
+                          <div v-if="show" class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action py-3">Info messaggio</a>
+                            <a href="#" @click="deleteMessaggio(index)" class="list-group-item list-group-item-action py-3">Elimina messaggio</a>
+                          </div>
+                        </div>
+                      </div>
+                      
                       <span style="margin-right: 5rem;" class="d-block">{{item.testo}}</span>
                       <span class="d-block text-end">{{item.ora}} <i :class="{blue : index + 1 != conversazione.length }" v-if="item.stato === 'inviato'" class="fas fa-check-double spunte"></i></span>
                       <div :class="{visibile : item.stato === 'ricevuto'}" class="indicatore">

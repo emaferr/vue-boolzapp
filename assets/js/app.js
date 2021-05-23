@@ -11,6 +11,8 @@ const app = new Vue ({
 
     data:{
 
+        show: false,
+
         contatti: [
             
             {
@@ -367,6 +369,8 @@ const app = new Vue ({
         this.contattiFiltrati = this.contatti
         
     },
+
+  
 
     
 
