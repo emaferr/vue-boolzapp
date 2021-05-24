@@ -295,6 +295,7 @@ const app = new Vue ({
 
     methods: {
 
+
         selezioneContatto(index){
 
             const immagine = this.contatti[index].immagine;
@@ -337,6 +338,8 @@ const app = new Vue ({
             
         },
 
+
+
         // Elimino il messaggio al click ma mi attengo alle politiche mondiali 
         // e conservo comunque il messaggio :) in un array 
         deleteMessaggio(index){
@@ -348,6 +351,8 @@ const app = new Vue ({
                 this.show = null;
             }
         },
+
+        
 
         rispostaMessaggio(){
 
@@ -385,7 +390,10 @@ const app = new Vue ({
 
             if(this.show != isNaN(this.show) ){
                 
-                console.log(this.show);
+                window.addEventListener("click" , function(){
+
+                    this.show = null
+                })
             }
            
         }
