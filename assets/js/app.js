@@ -340,8 +340,13 @@ const app = new Vue ({
         // Elimino il messaggio al click ma mi attengo alle politiche mondiali 
         // e conservo comunque il messaggio :) in un array 
         deleteMessaggio(index){
-            this.messaggiEliminati.push(this.conversazione[index])
-            this.conversazione.splice(index,1);
+            const eliminazioneDefinitiva = confirm("Elininare messagio?");
+            if(eliminazioneDefinitiva == true){
+                this.messaggiEliminati.push(this.conversazione[index])
+                this.conversazione.splice(index,1);
+                // Chiudo dropdown
+                this.show = null;
+            }
         },
 
         rispostaMessaggio(){
@@ -372,8 +377,19 @@ const app = new Vue ({
             });
         },
 
-        
-  
+
+        // Tentativo di chiudere dropdown al click esterno
+        chiusura(){
+
+            console.log(this.show);
+
+            if(this.show != isNaN(this.show) ){
+                
+                console.log(this.show);
+            }
+           
+        }
+
     }, 
 
     // Dopo praticamente un ora capisco come mostrare la lista contatti prima della ricerca
@@ -381,9 +397,9 @@ const app = new Vue ({
         this.contattiFiltrati = this.contatti
     },
 
- 
-
 });
+
+
 
 
 
