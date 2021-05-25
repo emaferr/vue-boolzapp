@@ -283,28 +283,28 @@ const app = new Vue ({
 
     methods: {
 
-        // toggle: function(index){
-        //     if( this.isOpenIndex !== null ){
-        //        this.isOpenIndex = ( this.isOpenIndex == index ) ? null : index;
-        //     } else {
-        //        this.isOpenIndex = index;
-        //     }
-        // },
+        toggle: function(index){
+            if( this.isOpenIndex !== null ){
+               this.isOpenIndex = ( this.isOpenIndex == index ) ? null : index;
+            } else {
+               this.isOpenIndex = index;
+            }
+        },
 
-        // theme() {
-        //     let a = document.querySelector(".utente_contatti");
-        //     let b = document.querySelector(".componi");
-        //     let c = document.querySelector(".sezione_lista_contatti");
-        //     let d = document.querySelector(".banda");
-        //     let e = document.querySelector(".sfondo_principale");
-        //     a.classList.toggle("nightmode2");
-        //     b.classList.toggle("nightmode2");
-        //     c.classList.toggle("nightmode2");
-        //     d.classList.toggle("nightmode1");
-        //     e.classList.toggle("nightmode1");
-        //     this.nightmode1 = !this.nightmode1;
-        //     this.nightmode2 = !this.nightmode2;
-        //   },
+        theme() {
+            let a = document.querySelector(".utente_contatti");
+            let b = document.querySelector(".componi");
+            let c = document.querySelector(".sezione_lista_contatti");
+            let d = document.querySelector(".banda");
+            let e = document.querySelector(".sfondo_principale");
+            a.classList.toggle("nightmode2");
+            b.classList.toggle("nightmode2");
+            c.classList.toggle("nightmode2");
+            d.classList.toggle("nightmode1");
+            e.classList.toggle("nightmode1");
+            this.nightmode1 = !this.nightmode1;
+            this.nightmode2 = !this.nightmode2;
+          },
 
 
         selezioneContatto(index){
@@ -395,20 +395,42 @@ const app = new Vue ({
 
 
         // Tentativo di chiudere dropdown al click esterno
-        chiusura(){
-                
-                document.addEventListener("click" , function(){
+        // chiusuraDrop(){
 
-                    console.log(app.show);
-                })
-  
-        }
+        //     document.addEventListener("click" , function(){
+
+        //         console.log(app.show);
+
+                
+        //     })
+
+         
+                
+              
+        // }
 
     }, 
 
     // Dopo praticamente un ora capisco come mostrare la lista contatti prima della ricerca
     mounted() {
         this.contattiFiltrati = this.contatti
+
+        
+        document.addEventListener('click', function() {
+           
+            if(app.show != false || app.show === 0 ){
+
+                document.addEventListener('click', function() {
+
+           
+                    app.show = null
+                         
+                })
+
+            }
+            
+        })
+       
     },
 
 });

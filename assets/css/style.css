@@ -291,7 +291,7 @@ input:focus {
     color: #eee;
   }
 
-  /* #dark_button{
+#dark_button{
     position: fixed;
     top: 2%;
     right: 12%;
