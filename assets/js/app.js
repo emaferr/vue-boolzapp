@@ -416,20 +416,20 @@ const app = new Vue ({
         this.contattiFiltrati = this.contatti
 
         
-        document.addEventListener('click', function() {
+        // document.addEventListener('click', function() {
            
-            if(app.show != false || app.show === 0 ){
+        //     if(app.show != false || app.show === 0 ){
 
-                document.addEventListener('click', function() {
+        //         document.addEventListener('click', function() {
 
            
-                    app.show = null
+        //             app.show = null
                          
-                })
+        //         })
 
-            }
+        //     }
             
-        })
+        // })
        
     },
 
