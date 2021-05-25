@@ -276,34 +276,35 @@ const app = new Vue ({
 
         ricercaContatto:'',
 
+        messaggioAttivo:"",
+
     },
 
-    methods: {
-        toggle: function(index){
-            if( this.isOpenIndex !== null ){
-               this.isOpenIndex = ( this.isOpenIndex == index ) ? null : index;
-            } else {
-               this.isOpenIndex = index;
-            }
-        }
-    },
 
     methods: {
 
-        theme() {
-            let a = document.querySelector(".utente_contatti");
-            let b = document.querySelector(".componi");
-            let c = document.querySelector(".sezione_lista_contatti");
-            let d = document.querySelector(".banda");
-            let e = document.querySelector(".sfondo_principale");
-            a.classList.toggle("nightmode2");
-            b.classList.toggle("nightmode2");
-            c.classList.toggle("nightmode2");
-            d.classList.toggle("nightmode1");
-            e.classList.toggle("nightmode1");
-            this.nightmode1 = !this.nightmode1;
-            this.nightmode2 = !this.nightmode2;
-          },
+        // toggle: function(index){
+        //     if( this.isOpenIndex !== null ){
+        //        this.isOpenIndex = ( this.isOpenIndex == index ) ? null : index;
+        //     } else {
+        //        this.isOpenIndex = index;
+        //     }
+        // },
+
+        // theme() {
+        //     let a = document.querySelector(".utente_contatti");
+        //     let b = document.querySelector(".componi");
+        //     let c = document.querySelector(".sezione_lista_contatti");
+        //     let d = document.querySelector(".banda");
+        //     let e = document.querySelector(".sfondo_principale");
+        //     a.classList.toggle("nightmode2");
+        //     b.classList.toggle("nightmode2");
+        //     c.classList.toggle("nightmode2");
+        //     d.classList.toggle("nightmode1");
+        //     e.classList.toggle("nightmode1");
+        //     this.nightmode1 = !this.nightmode1;
+        //     this.nightmode2 = !this.nightmode2;
+        //   },
 
 
         selezioneContatto(index){
@@ -395,17 +396,12 @@ const app = new Vue ({
 
         // Tentativo di chiudere dropdown al click esterno
         chiusura(){
-
-            console.log(this.show);
-
-            if(this.show != isNaN(this.show) ){
                 
-                window.addEventListener("click" , function(){
+                document.addEventListener("click" , function(){
 
-                    this.show = null
+                    console.log(app.show);
                 })
-            }
-           
+  
         }
 
     }, 

@@ -37,10 +37,10 @@ li , .avatar, .contatto_attivo span, .utente span{
 #page{
     position: absolute;
     top: 2.5vh;
-    left: 10%;
+    left: 12.5%;
     background-color: #EAEAEA;
     height: 95vh;
-    width: 80%;
+    width: 75%;
 }
 
 /* HEADER */
@@ -288,14 +288,13 @@ input:focus {
   .nightmode2 {
 
     background: #2B2F32;
-    border-color: rgb(158, 158, 158);
     color: #eee;
   }
 
-  #dark_button{
+  /* #dark_button{
     position: fixed;
     top: 2%;
-    right: 10%;
+    right: 12%;
     transform: scale(.5);
   }
 
@@ -322,7 +321,6 @@ input:focus {
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    -webkit-transition: .4s;
     transition: .4s;
   }
   
@@ -334,21 +332,18 @@ input:focus {
     left: 4px;
     bottom: 4px;
     background-color: white;
-    -webkit-transition: .4s;
     transition: .4s;
   }
   
   input:checked + .slider {
-    background-color: #02221e;
+    background-color: black;
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #02221e;
+    box-shadow: 0 0 1px black;
   }
   
   input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
     transform: translateX(26px);
   }
   
@@ -359,7 +354,7 @@ input:focus {
   
   .slider.round:before {
     border-radius: 50%;
-  }
+  } */
 
 
 
