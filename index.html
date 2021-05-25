@@ -28,185 +28,213 @@
 
       </head>
 
-      <body>
+      <div id="app">
 
-        <!-- Sfondo Web app -->
-        <div class="sfondo_principale">
-          <div class="banda"></div>
-        </div>
+        <body>
 
-        <!-- VUE -->
-        <div id="app" class="shadow" @click="chiusura()">
+          <!-- Sfondo Web app -->
+          <div class="sfondo_principale">
+            <div class="banda"></div>
+          </div>
+  
+          <!-- VUE -->
+          <div id="page" class="shadow" @click="chiusura()">
+  
+            <!-- <nav class="navbar">
+              <ul class="navitems">
+                <li @click="theme">
+                  <span v-if="!nightmode" class="fas fa-toggle-on">cliccami</span>
+                  <span v-if="!nightmode" class="fas fa-toggle-on"></span>
+                </li>
+              </ul>
+            </nav> -->
 
-          <!-- HEADER -->
-          <header>
-
-            <!-- SEZIONE UTENTE -->
-            <div class="utente_contatti">
-
-              <div class="row">
-
-                <div class="col-4 sezione_utente border-end">
-
-                  <div class="utente">
-                    <img src="./assets/img/avatar_8.jpg" class="img-fluid avatar rounded-circle" alt="...">
-                    <span class="mx-1">Emanuele</span>
-                  </div>
-                  
-                  <div class="icone_top">
-                    <i class="fas fa-circle-notch"></i>
-                    <i class="fas fa-comment-alt mx-3"></i>
-                    <i class="fas fa-ellipsis-v"></i>
-                  </div>
-
-                </div>
-
-                <!-- SEZIONE CONTATTO ATTIVO -->
-                <div class="col sezione_contatti justify-content-between non_selezionato " :class="{selezionato : utenteAttivo}">
-
-                  <div class="contatto_attivo">
-                    <img :src="immagineAttiva"  class="img-fluid avatar rounded-circle" alt="...">
-                    <div class="dettagli_contatto_attivo mx-2">
-                      <span class="">{{utenteAttivo.nome}}</span>
-                      <span style="font-size: .8rem;" class="text-black-50">Ultimo accesso oggi alle {{getCurrentTime()}}</span>
-                    </div>
-                  </div> 
-                  
-                  <div class="icone_top pe-4">
-                    <i class="fas fa-search" ></i>
-                    <i class="fas fa-paperclip mx-3"></i>
-                    <i class="fas fa-ellipsis-v"></i>
-                  </div>
-
-                </div>
-
-              </div>
-              
-            </div>
-
-          </header>
-          <!-- FINE HEADER -->
-          
-          <!-- MAIN -->
-          <main>
-
-            <!-- SEZIONE LISTA CONTATTI -->
-            <div class="sezione_lista_contatti">
-
-              <div class="row">
-
-                <div class="col-4 pe-0">
-
-                  <!-- AVVISO -->
-                  <div class="avviso p-4">
-
-                    <i class="fas fa-bell-slash rounded-circle me-2"></i>
-                    
-                    <div class="d-inline text-nowrap overflow-auto pt-1">
-                      <span class="">Ricevi notifiche di nuovi messaggi</span>
-                      <a class="d-block text-black-50" href="#">Attiva notifiche desktop <i style="font-size: .7rem;" class="fas fa-chevron-right"></i> </a>
+            <!-- <label class="switch">
+              <input  @click="theme" v-if="!nightmode" type="checkbox">
+              <span v-if="!nightmode" class="f" class="slider round"></span>
+            </label> -->
+            <label id="dark_button" type="checkbox" class="switch">
+              <input @click="theme" v-if="!nightmode" type="checkbox">
+              <span v-if="!nightmode" class="slider round" class="slider round"></span>
+            </label>
+            
+  
+            <!-- HEADER -->
+            <header>
+  
+              <!-- SEZIONE UTENTE -->
+              <div class="utente_contatti">
+  
+                <div class="row">
+  
+                  <div class="col-4 sezione_utente border-end">
+  
+                    <div class="utente">
+                      <img src="./assets/img/avatar_8.jpg" class="img-fluid avatar rounded-circle" alt="...">
+                      <span class="mx-1">Emanuele</span>
                     </div>
                     
+                    <div class="icone_top">
+                      <i class="fas fa-circle-notch"></i>
+                      <i class="fas fa-comment-alt mx-3"></i>
+                      <i class="fas fa-ellipsis-v"></i>
+                    </div>
+  
                   </div>
-
-                  <!-- BARRA DI RICERCA -->
-                  <div class="barra_ricerca m-2">
-                    <i class="fas fa-search"></i>
-                    <input @keyup="ricerca" v-model="ricercaContatto" class="ricerca rounded-pill py-2" type="text" name="search" placeholder="Cerca o inizia una nuova chat">
-                  </div>
-
-                  <!-- LISTA CONTATTI -->
-                  <section class="lista_contatti">
-
-                    <ul class="px-3 list-group list-group-flush">
-
-                      <li class="list-group-item flex-row " v-for="(contatto, index) in contattiFiltrati" @click="selezioneContatto(index)">
-                      
-                        <img :src="'./assets/img/avatar' + contatto.immagine + '.jpg'" class="img-fluid avatar rounded-circle me-3 py-2" alt="">
-
-                        <div class="ultimo_messaggio">
-                          <span>{{contatto.nome}}</span>
-                          <span class="text-black-50" v-for="(messaggio, key) in contatto.messaggi" v-if="key + 1 === contatto.messaggi.length"><i :class="{blue : key + 1 != contatto.messaggi.length }" v-if="messaggio.stato === 'inviato'" class="fas fa-check-double spunte me-1"></i>{{messaggio.testo}}</span>
-                        </div>
-
-                        <span class="text-black-50 ora" v-for="(messaggio, key) in contatto.messaggi" v-if="key + 1 === contatto.messaggi.length">{{messaggio.ora}}</span>
-                        
-                    
-                      </li>
-                      
-                    </ul>
-
-                  </section>
-
-                </div>
-
-                <!-- SEZIONE CHAT -->
-                <div class="chat col overflow-scroll">
-
-                  <div :class="{inizio : utenteAttivo.nome === contatti.nome}" class="conversazione px-5 pt-4 overflow-scroll">
-                    <div style="line-height: .5rem;" :class="{ricevuto : item.stato === 'inviato'}" class="messaggi pt-3 pb-2 px-3 my-3" v-for="(item, index) in conversazione" :key="index">
-                      
-                      <!-- <button @click="deleteMessaggio(index)">Elimina</button> -->
-                      
-                      <div v-on:click="show = show === index ? null : index" id="drop_elimina">
-                        <i class="fas fa-chevron-down"></i>
+  
+                  <!-- SEZIONE CONTATTO ATTIVO -->
+                  <div class="col sezione_contatti justify-content-between non_selezionato " :class="{selezionato : utenteAttivo}">
+  
+                    <div class="contatto_attivo">
+                      <img :src="immagineAttiva"  class="img-fluid avatar rounded-circle" alt="...">
+                      <div class="dettagli_contatto_attivo mx-2">
+                        <span class="">{{utenteAttivo.nome}}</span>
+                        <span style="font-size: .8rem;" class="text-black-50">Ultimo accesso oggi alle {{getCurrentTime()}}</span>
                       </div>
-
-                      <div id="drop" v-if="show === index">
-                        <div>
-                          <div class="list-group">
-                            <a href="#" class="list-group-item list-group-item-action py-3">Info messaggio</a>
-                            <a href="#" @click="deleteMessaggio(index)" class="list-group-item list-group-item-action py-3">Elimina messaggio</a>
+                    </div> 
+                    
+                    <div class="icone_top pe-4">
+                      <i class="fas fa-search" ></i>
+                      <i class="fas fa-paperclip mx-3"></i>
+                      <i class="fas fa-ellipsis-v"></i>
+                    </div>
+  
+                  </div>
+  
+                </div>
+                
+              </div>
+  
+            </header>
+            <!-- FINE HEADER -->
+            
+            <!-- MAIN -->
+            <main>
+  
+              <!-- SEZIONE LISTA CONTATTI -->
+              <div class="sezione_lista_contatti">
+  
+                <div class="row">
+  
+                  <div class="col-4 pe-0">
+  
+                    <!-- AVVISO -->
+                    <div class="avviso p-4">
+  
+                      <i class="fas fa-bell-slash rounded-circle me-2"></i>
+                      
+                      <div class="d-inline text-nowrap overflow-auto pt-1">
+                        <span class="">Ricevi notifiche di nuovi messaggi</span>
+                        <a class="d-block text-black-50" href="#">Attiva notifiche desktop <i style="font-size: .7rem;" class="fas fa-chevron-right"></i> </a>
+                      </div>
+                      
+                    </div>
+  
+                    <!-- BARRA DI RICERCA -->
+                    <div class="barra_ricerca m-2">
+                      <i class="fas fa-search"></i>
+                      <input @keyup="ricerca" v-model="ricercaContatto" class="ricerca rounded-pill py-2" type="text" name="search" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+  
+                    <!-- LISTA CONTATTI -->
+                    <section class="lista_contatti">
+  
+                      <ul class="px-3 list-group list-group-flush">
+  
+                        <li class="list-group-item flex-row " v-for="(contatto, index) in contattiFiltrati" @click="selezioneContatto(index)">
+                        
+                          <img :src="'./assets/img/avatar' + contatto.immagine + '.jpg'" class="img-fluid avatar rounded-circle me-3 py-2" alt="">
+  
+                          <div class="ultimo_messaggio">
+                            <span>{{contatto.nome}}</span>
+                            <span class="text-black-50" v-for="(messaggio, key) in contatto.messaggi" v-if="key + 1 === contatto.messaggi.length"><i :class="{blue : key + 1 != contatto.messaggi.length }" v-if="messaggio.stato === 'inviato'" class="fas fa-check-double spunte me-1"></i>{{messaggio.testo}}</span>
+                          </div>
+  
+                          <span class="text-black-50 ora" v-for="(messaggio, key) in contatto.messaggi" v-if="key + 1 === contatto.messaggi.length">{{messaggio.ora}}</span>
+                          
+                      
+                        </li>
+                        
+                      </ul>
+  
+                    </section>
+  
+                  </div>
+  
+                  <!-- SEZIONE CHAT -->
+                  <div class="chat col overflow-scroll">
+  
+                    <div :class="{inizio : utenteAttivo.nome === contatti.nome}" class="conversazione px-5 pt-4 overflow-scroll">
+                      <div style="line-height: .5rem;" :class="{ricevuto : item.stato === 'inviato'}" class="messaggi pt-3 pb-2 px-3 my-3" v-for="(item, index) in conversazione" :key="index">
+                        
+                        <!-- <button @click="deleteMessaggio(index)">Elimina</button> -->
+                        
+                        <div v-on:click="show = show === index ? null : index" id="drop_elimina">
+                          <i class="fas fa-chevron-down"></i>
+                        </div>
+  
+                        <div id="drop" v-if="show === index">
+                          <div>
+                            <div class="list-group">
+                              <a href="#" class="list-group-item list-group-item-action py-3">Info messaggio</a>
+                              <a href="#" @click="deleteMessaggio(index)" class="list-group-item list-group-item-action py-3">Elimina messaggio</a>
+                            </div>
                           </div>
                         </div>
+                        
+                        <span style="margin-right: 5rem;" class="d-block">{{item.testo}}</span>
+                        <span class="d-block text-end">{{item.ora}} <i :class="{blue : index + 1 != conversazione.length }" v-if="item.stato === 'inviato'" class="fas fa-check-double spunte"></i></span>
+                        <div :class="{visibile : item.stato === 'ricevuto'}" class="indicatore">
+                          <i class="fas fa-caret-down"></i>
+                        </div>
+                        <div :class="{visibile : item.stato === 'inviato'}" class="indicatore_inviato">
+                          <i class="fas fa-caret-down"></i>
+                        </div>
+  
                       </div>
                       
-                      <span style="margin-right: 5rem;" class="d-block">{{item.testo}}</span>
-                      <span class="d-block text-end">{{item.ora}} <i :class="{blue : index + 1 != conversazione.length }" v-if="item.stato === 'inviato'" class="fas fa-check-double spunte"></i></span>
-                      <div :class="{visibile : item.stato === 'ricevuto'}" class="indicatore">
-                        <i class="fas fa-caret-down"></i>
-                      </div>
-                      <div :class="{visibile : item.stato === 'inviato'}" class="indicatore_inviato">
-                        <i class="fas fa-caret-down"></i>
-                      </div>
-
+                    </div>
+  
+                    <!-- COMPONI MESSAGGIO -->
+                    <div class="componi py-3">
+  
+                      <i class="far fa-smile icone_bottom mx-3"></i>
+                      <input @keydown.enter="addMessaggio" id="nuovo_messaggio" v-model="nuovoMessaggio" style="width: 100%;" class="border-0 rounded-pill px-4 py-3" type="text" placeholder="Scrivi un messaggio">
+                      <i class="fas fa-microphone icone_bottom mx-3"></i>
+  
                     </div>
                     
                   </div>
-
-                  <!-- COMPONI MESSAGGIO -->
-                  <div class="componi py-3">
-
-                    <i class="far fa-smile icone_bottom mx-3"></i>
-                    <input @keydown.enter="addMessaggio" id="nuovo_messaggio" v-model="nuovoMessaggio" style="width: 100%;" class="border-0 rounded-pill px-4 py-3" type="text" placeholder="Scrivi un messaggio">
-                    <i class="fas fa-microphone icone_bottom mx-3"></i>
-
-                  </div>
-                  
+  
                 </div>
-
+  
               </div>
+  
+            </main>
+            <!-- FINE MAIN -->
+  
+          </div>
+          <!-- FINE APP VUE -->
+  
+          <!-- Optional JavaScript; choose one of the two! -->
+          <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"></script>
+          <script src="./assets/js/app.js"></script>
+  
+          <!-- Option 1: Bootstrap Bundle with Popper -->
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  
+          <!-- Option 2: Separate Popper and Bootstrap JS -->
+          <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+  
+        </body>
 
-            </div>
 
-          </main>
-          <!-- FINE MAIN -->
 
-        </div>
-        <!-- FINE APP VUE -->
 
-        <!-- Optional JavaScript; choose one of the two! -->
-        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"></script>
-        <script src="./assets/js/app.js"></script>
+      </div>
 
-        <!-- Option 1: Bootstrap Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
-        <!-- Option 2: Separate Popper and Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-
-      </body>
 
     </html>

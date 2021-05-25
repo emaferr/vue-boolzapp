@@ -1,15 +1,10 @@
-// Milestone 1:
-// Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) 
-// e dall’interlocutore (bianco) assegnando due classi CSS diverse
-
-// Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, 
-// visualizzare nome e immagine di ogni contatto
-
 const app = new Vue ({
 
     el:'#app',
 
     data:{
+
+        nightmode: false,
 
         show: false,
 
@@ -295,6 +290,21 @@ const app = new Vue ({
 
     methods: {
 
+        theme() {
+            let a = document.querySelector(".utente_contatti");
+            let b = document.querySelector(".componi");
+            let c = document.querySelector(".sezione_lista_contatti");
+            let d = document.querySelector(".banda");
+            let e = document.querySelector(".sfondo_principale");
+            a.classList.toggle("nightmode2");
+            b.classList.toggle("nightmode2");
+            c.classList.toggle("nightmode2");
+            d.classList.toggle("nightmode1");
+            e.classList.toggle("nightmode1");
+            this.nightmode1 = !this.nightmode1;
+            this.nightmode2 = !this.nightmode2;
+          },
+
 
         selezioneContatto(index){
 
@@ -406,18 +416,3 @@ const app = new Vue ({
     },
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
