@@ -73,7 +73,7 @@
                   </div>
   
                   <!-- SEZIONE CONTATTO ATTIVO -->
-                  <div class="col sezione_contatti justify-content-between non_selezionato " :class="{selezionato : utenteAttivo}">
+                  <div class="col sezione_contatti justify-content-between non_selezionato ps-2" :class="{selezionato : utenteAttivo}">
   
                     <div class="contatto_attivo">
                       <img :src="immagineAttiva"  class="img-fluid avatar rounded-circle" alt="...">
@@ -137,10 +137,10 @@
   
                           <div class="ultimo_messaggio">
                             <span>{{contatto.nome}}</span>
-                            <span class="text-black-50" v-for="(messaggio, key) in contatto.messaggi" v-if="key + 1 === contatto.messaggi.length"><i :class="{blue : key + 1 != contatto.messaggi.length }" v-if="messaggio.stato === 'inviato'" class="fas fa-check-double spunte me-1"></i>{{messaggio.testo}}</span>
+                            <span class="text-black-50 messaggio_lista" v-for="(messaggio, key) in contatto.messaggi" v-if="key + 1 === contatto.messaggi.length"><i :class="{blue : key + 1 != contatto.messaggi.length }" v-if="messaggio.stato === 'inviato'" class="fas fa-check-double spunte me-1"></i>{{messaggio.testo}}</span>
                           </div>
   
-                          <span class="text-black-50 ora" v-for="(messaggio, key) in contatto.messaggi" v-if="key + 1 === contatto.messaggi.length">{{messaggio.ora}}</span>
+                          <span class="text-black-50 ora messaggio_lista" v-for="(messaggio, key) in contatto.messaggi" v-if="key + 1 === contatto.messaggi.length">{{messaggio.ora}}</span>
                           
                       
                         </li>
@@ -155,7 +155,7 @@
                   <div class="chat col overflow-scroll">
   
                     <div :class="{inizio : utenteAttivo.nome === contatti.nome}" class="conversazione px-5 pt-4 overflow-scroll">
-                      <div style="line-height: .5rem;" :class="{ricevuto : item.stato === 'inviato'}" class="messaggi pt-3 pb-2 px-3 my-3" v-for="(item, index) in conversazione" :key="index">
+                      <div style="line-height: .5rem;" :class="{ricevuto : item.stato === 'inviato'}" class="messaggi pt-3 pb-2 px-3 my-3 shadow-sm" v-for="(item, index) in conversazione" :key="index">
                         
                         <!-- <button @click="deleteMessaggio(index)">Elimina</button> -->
                         
@@ -186,7 +186,7 @@
                     </div>
   
                     <!-- COMPONI MESSAGGIO -->
-                    <div class="componi py-3">
+                    <div class="componi py-3 ps-2">
   
                       <i class="far fa-smile icone_bottom mx-3"></i>
                       <input @keydown.enter="addMessaggio" id="nuovo_messaggio" v-model="nuovoMessaggio" style="width: 100%;" class="border-0 rounded-pill px-4 py-3" type="text" placeholder="Scrivi un messaggio">

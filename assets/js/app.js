@@ -276,7 +276,7 @@ const app = new Vue ({
 
         ricercaContatto:'',
 
-        messaggioAttivo:"",
+        messaggioAttivo: "",
 
     },
 
@@ -291,19 +291,11 @@ const app = new Vue ({
             }
         },
 
+        // Impostazioni tema dark
         theme() {
-            let a = document.querySelector(".utente_contatti");
-            let b = document.querySelector(".componi");
-            let c = document.querySelector(".sezione_lista_contatti");
-            let d = document.querySelector(".banda");
-            let e = document.querySelector(".sfondo_principale");
-            a.classList.toggle("nightmode2");
-            b.classList.toggle("nightmode2");
-            c.classList.toggle("nightmode2");
-            d.classList.toggle("nightmode1");
-            e.classList.toggle("nightmode1");
-            this.nightmode1 = !this.nightmode1;
-            this.nightmode2 = !this.nightmode2;
+            let a = document.querySelector("body");
+            a.classList.toggle("dark");
+            this.dark = !this.dark;
           },
 
 
@@ -393,43 +385,26 @@ const app = new Vue ({
             });
         },
 
-
-        // Tentativo di chiudere dropdown al click esterno
-        // chiusuraDrop(){
-
-        //     document.addEventListener("click" , function(){
-
-        //         console.log(app.show);
-
-                
-        //     })
-
-         
-                
-              
-        // }
-
     }, 
 
     // Dopo praticamente un ora capisco come mostrare la lista contatti prima della ricerca
     mounted() {
         this.contattiFiltrati = this.contatti
-
         
-        // document.addEventListener('click', function() {
+        document.addEventListener('click', function() {
            
-        //     if(app.show != false || app.show === 0 ){
+            if(app.show != false || app.show === 0 ){
 
-        //         document.addEventListener('click', function() {
+                document.addEventListener('click', function() {
 
            
-        //             app.show = null
+                    console.log(app.show);
                          
-        //         })
+                })
 
-        //     }
+            }
             
-        // })
+        })
        
     },
 

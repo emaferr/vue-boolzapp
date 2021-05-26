@@ -3,6 +3,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.row{
+    --bs-gutter-x: 0rem;
+    --bs-gutter-y: 0rem;
+}
+
 .avatar{
     width: 60px;
 }
@@ -174,7 +179,7 @@ input:focus {
 .messaggi{
     background-color: #ffffff;
     width: max-content;
-    border-radius: 15px;
+    border-radius: 7px;
     position: relative;
 }
 
@@ -279,17 +284,54 @@ input:focus {
   background-color: #f6f6f6;
 }
 
-.nightmode1 {
+.dark {
+    color: #eee;
+}
 
+.dark .sfondo_principale, .dark .banda{
     background: #0A0E11;
-    color: #eee;
-  }
+}
 
-  .nightmode2 {
+/* .dark .sezione_lista_contatti .row .col-4{
+    background: #151C20;
+} */
 
-    background: #2B2F32;
-    color: #eee;
-  }
+.dark ul, .dark ul li {
+    background-color: #151C20;
+    color: white;
+}
+
+.dark ul li{
+    border: 1px solid #333739;
+}
+.dark .messaggio_lista {
+    color: #A0A2A5!important;
+}
+
+.dark .sezione_lista_contatti .col-4{
+    background-color: #151C20;
+}
+
+.dark .utente_contatti .row, .dark input{
+    background-color: #333739;
+}
+
+.dark .componi{
+    background-color: #1F2428;
+}
+
+.dark .messaggi {
+    background-color: #272D31;
+}
+
+.dark .ricevuto {
+    background-color: #2B5F61;
+}
+
+.dark .indicatore_inviato{
+    color: #2B5F61;
+}
+
 
 #dark_button{
     position: fixed;
