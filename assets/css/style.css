@@ -314,6 +314,7 @@ input:focus {
 
 .dark .utente_contatti .row, .dark input{
     background-color: #333739;
+   
 }
 
 .dark .componi{
@@ -322,14 +323,24 @@ input:focus {
 
 .dark .messaggi {
     background-color: #272D31;
+    filter: invert(1);
 }
 
 .dark .ricevuto {
     background-color: #2B5F61;
+    filter: invert(1);
 }
-
+.dark .indicatore{
+    color: #272D31;
+    
+}
 .dark .indicatore_inviato{
     color: #2B5F61;
+    ffilter: invert(1);
+}
+
+.dark .conversazione{
+    filter: invert(1);
 }
 
 
