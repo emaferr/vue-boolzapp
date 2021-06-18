@@ -155,7 +155,6 @@ li , .avatar, .contatto_attivo span, .utente span{
     margin-left: -.75rem;
     background-image: url(../img/mine.jpg);
     overflow-x: auto;
-
 }
 
 /* Sezione scrivi un messaggio */
@@ -238,7 +237,7 @@ input:focus {
 
 .inizio{
 
-    background-image: url(/assets/img/Schermata\ 2021-05-21\ alle\ 23.03.12.png);
+    background-image: url('../img/Schermata\ 2021-05-21\ alle\ 23.03.12.png');
     background-size: cover;
     background-position: center;
 }
@@ -295,6 +294,7 @@ input:focus {
   background-color: #f6f6f6;
 }
 
+/* Dark mode */
 .dark {
     color: #eee;
 }
@@ -307,12 +307,6 @@ input:focus {
     filter: none;
     background-color: #333739;
 }
-/* .dark .conversazione{
-    background-image: url(/assets/img/Schermata\ 2021-05-26\ alle\ 15.24.55.png);
-} */
-/* .dark .sezione_lista_contatti .row .col-4{
-    background: #151C20;
-} */
 
 .dark ul, .dark ul li {
     background-color: #151C20;
@@ -342,9 +336,6 @@ input:focus {
     color: #255270;
     background-color: #96B1BC;
 }
-/* .scrollable-element {
-    scrollbar-color: dark;
-  } */
 
 .dark input{
     color: whitesmoke;
@@ -394,63 +385,61 @@ input:focus {
    margin-right: -1%;
 }
 
+.switch {
+position: relative;
+display: inline-block;
+width: 60px;
+height: 34px;
+}
 
+.switch input { 
+opacity: 0;
+width: 0;
+height: 0;
+}
 
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
-  
-  .switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
-  }
-  
-  input:checked + .slider {
-    background-color: black;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px black;
-  }
-  
-  input:checked + .slider:before {
-    transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  } 
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: .4s;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 26px;
+width: 26px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+transition: .4s;
+}
+
+input:checked + .slider {
+background-color: black;
+}
+
+input:focus + .slider {
+box-shadow: 0 0 1px black;
+}
+
+input:checked + .slider:before {
+transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+border-radius: 34px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+} 
 
 
 

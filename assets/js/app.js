@@ -385,27 +385,19 @@ const app = new Vue ({
             });
         },
 
+        // prova(){
+        //     console.log(this.show);
+        //     if(this.show != false){
+        //         addEventListener("click" , )
+        //     }
+        // },
+
     }, 
 
     // Dopo praticamente un ora capisco come mostrare la lista contatti prima della ricerca
     mounted() {
         this.contattiFiltrati = this.contatti
-        
-        document.addEventListener('click', function() {
-           
-            if(app.show != false || app.show === 0 ){
-
-                document.addEventListener('click', function() {
-
-           
-                    console.log(app.show);
-                         
-                })
-
-            }
-            
-        })
-       
+              
     },
 
 });
